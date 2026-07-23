@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Andrés ❤️</title>
 
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f8c8dc;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.fondo{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("foto.jpg") center center/cover no-repeat;
+filter:brightness(45%);
+}
+
+.contenido{
+position:relative;
+text-align:center;
+color:white;
+padding:25px;
+z-index:10;
+animation:aparecer 2s;
+}
+
+h1{
+font-size:38px;
+margin:15px 0;
+}
+
+p{
+font-size:22px;
+margin-bottom:15px;
+}
+
+button{
+margin-top:25px;
+padding:15px 35px;
+font-size:22px;
+border:none;
+border-radius:50px;
+background:#ff4f87;
+color:white;
+cursor:pointer;
+}
+
+#mensaje{
+display:none;
+font-size:24px;
+margin-top:25px;
+}
+
+@keyframes aparecer{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.corazon{
+position:fixed;
+top:-30px;
+font-size:30px;
+animation:caer 5s linear forwards;
+}
+
+@keyframes caer{
+to{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="fondo"></div>
+
+<div class="contenido">
+
+<h2>❤️ Andrés...</h2>
+
+<p>Tengo una pregunta muy importante para ti...</p>
+
+<h1>💖 ¿Quieres ser mi novio? 💖</h1>
+
+<button onclick="acepto()">Sí, quiero ❤️</button>
+
+<div id="mensaje">
+🥹❤️<br><br>
+<b>¡Me hiciste muy feliz!</b><br><br>
+Gracias por aceptar.<br>
+Ahora sí... comienza nuestra historia. 💕
+</div>
+
+</div>
+
+<script>
+
+function acepto(){
+
+document.getElementById("mensaje").style.display="block";
+
+for(let i=0;i<50;i++){
+
+let c=document.createElement("div");
+
+c.innerHTML="❤️";
+
+c.className="corazon";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(c);
+
+setTimeout(()=>c.remove(),5000);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

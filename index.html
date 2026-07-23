@@ -117,24 +117,28 @@ opacity:0;
 <button onclick="acepto()">Sí, quiero ❤️</button>
 
 <div id="mensaje">
-🥹❤️<br><br>
-<h2>¡Me hiciste muy feliz!</h2>
+<h2>🥹❤️ ¡Me hiciste muy feliz!</h2>
 
-<p>
-Gracias por aceptar.<br>
-Ahora sí... comienza nuestra historia. 💕
+<p>Gracias por aceptar.</p>
+
+<h1 style="opacity:0; animation:aparece 2s forwards; animation-delay:1s;">
+💖 ¡Ahora oficialmente eres mi novio! 💖
+</h1>
+
+<p style="opacity:0; animation:aparece 2s forwards; animation-delay:3s;">
+Que este sea el comienzo de una historia muy bonita. ❤️
 </p>
-
-<p style="font-size:40px;">❤️</p>
-</div>
-
 </div>
 
 <script>
 
 function acepto(){
 
+setTimeout(function(){
+
 document.getElementById("mensaje").style.display="block";
+
+},3000);
 
 for(let i=0;i<50;i++){
 
@@ -160,3 +164,13 @@ setTimeout(()=>c.remove(),5000);
 
 </body>
 </html>
+@keyframes aparece{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
